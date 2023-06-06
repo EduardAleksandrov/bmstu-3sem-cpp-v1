@@ -1,5 +1,6 @@
 #include <iostream>               // подключаем заголовочный файл iostream
 #include <sqlite3.h>
+#include <vector>
 
 void example(void);
 
@@ -14,6 +15,14 @@ public:
     ~Person() //Деструктор
     {
         std::cout << "Person " << name << " deleted" << std::endl;
+    }
+    void print()
+    {
+        std::cout << "Person name: " << name  << std::endl;
+    }
+    void setName(std::string f_name)
+    {
+        name = f_name;
     }
 private:
     std::string name;
@@ -44,9 +53,20 @@ int main()                          // определяем функцию main
 // function prototype
     example();
 // динамический объект
-    Person *personPtr{new Person("Tom")}; // {} можно использовать
+    Person *personPtr {new Person("Tom")}; // {} можно использовать
     delete personPtr;
     personPtr = nullptr;
+// объект в динамическом массиве вектор
+    std::vector<Person> v(3, Person("Name"));
+    std::vector<std::string> strname(3);
+    strname[0] = "Sam";
+    strname[1] = "Tomas";
+    strname[2] = "Julia";
+    for(int i = 0; i < 3; i++)
+    {
+        v[i].setName(strname[i]);
+    }
+    v[2].print();
 
 
     return 0;                       // выходим из функции
