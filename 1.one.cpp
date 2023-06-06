@@ -2,7 +2,8 @@
 #include <sqlite3.h>
 #include <vector>
 
-void example(void);
+void example(void); // прототип функции
+class Person; // прототип класса (потому что вышележащий класс еще не знает про нижележащий, а дружественную функцию или дружественный класс нужно описать)
 
 class Person
 {
