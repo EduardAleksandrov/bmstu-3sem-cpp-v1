@@ -18,14 +18,16 @@ public:
     }
     void print()
     {
-        std::cout << "Person name: " << name  << std::endl;
+        std::cout << "Person name: " << name  << " Person age: " << age  << std::endl;
     }
     void setName(std::string f_name)
     {
         name = f_name;
     }
+    void setAge(unsigned int f_age);
 private:
     std::string name;
+    unsigned int age;
 };
 
 
@@ -65,6 +67,7 @@ int main()                          // определяем функцию main
     for(int i = 0; i < 3; i++)
     {
         v[i].setName(strname[i]);
+        v[i].setAge(i+40);
     }
     v[2].print();
 
@@ -75,4 +78,9 @@ int main()                          // определяем функцию main
 void example()
 {
     std::cout << "прототип функции" << "\n";
+}
+
+void Person::setAge(unsigned int f_age)
+{
+    age = f_age;
 }
