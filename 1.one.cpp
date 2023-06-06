@@ -1,5 +1,6 @@
 #include <iostream>               // подключаем заголовочный файл iostream
 #include <sqlite3.h>
+#include "./1.one_linkfile_header.hpp"
 
 void example(void);
 
@@ -47,6 +48,10 @@ int main()                          // определяем функцию main
     Person *personPtr{new Person("Tom")}; // {} можно использовать
     delete personPtr;
     personPtr = nullptr;
+// данные из linker
+    std::cout << message << times << "\n" << std::endl;
+
+
 
 
     return 0;                       // выходим из функции
