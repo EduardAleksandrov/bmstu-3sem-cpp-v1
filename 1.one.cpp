@@ -51,7 +51,7 @@ int main()                          // определяем функцию main
     std::cout << zzz << "\n" << std::endl;
 // bool
     bool t;
-    t = true;
+    t = true; // = т.к. нет преобразование типов
     std::cout << t << "\n" << std::endl;
 // function prototype
     example();
