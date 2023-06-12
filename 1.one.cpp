@@ -56,7 +56,7 @@ int main()                          // определяем функцию main
 // function prototype
     example();
 // динамический объект
-    Person *personPtr {new Person("Tom")}; // {} можно использовать
+    Person *personPtr {new Person("Tom")}; // {} можно использовать; можно так -  Person *personPtr = new Person("Tom");
     delete personPtr;
     personPtr = nullptr;
 // объект в динамическом массиве вектор
