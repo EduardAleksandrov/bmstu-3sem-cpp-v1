@@ -7,6 +7,7 @@ class Person; // прототип класса (потому что вышеле
 
 class Person
 {
+    std::string sirname; 
 public:
     Person(std::string p_name) //конструктор
     {
@@ -71,6 +72,8 @@ int main()                          // определяем функцию main
         v[i].setAge(i+40);
     }
     v[2].print();
+// переменная вне private, public
+    v[1].setName("Tom"); // нет доступа до sirname
 
 
     return 0;                       // выходим из функции

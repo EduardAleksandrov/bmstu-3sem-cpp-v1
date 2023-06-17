@@ -21,3 +21,6 @@ run1.one.four:
 
 run2.two:
 	g++ -std=c++17 ./2.two.cpp ./2.two_linkfile.cpp -o ./build/2.two -g && ./build/2.two
+
+run3.three:
+	g++ -std=c++17 ./3.abstrackClass.cpp -o ./build/3.abstrackClass -g && ./build/3.abstrackClass
