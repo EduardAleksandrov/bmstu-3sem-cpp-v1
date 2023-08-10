@@ -24,3 +24,6 @@ run2.two:
 
 run3.three:
 	g++ -std=c++17 ./3.abstrackClass.cpp -o ./build/3.abstrackClass -g && ./build/3.abstrackClass
+
+run4.set:
+	g++ -std=c++17 ./4.set.cpp -o ./build/4.set -g && ./build/4.set
