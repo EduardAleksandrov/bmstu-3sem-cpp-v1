@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# $chmod u+x load
+# ls -l load
+
 function build_folder() {
     cd ./build/
     echo "to build folder"
