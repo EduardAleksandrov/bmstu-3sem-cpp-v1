@@ -1,0 +1,39 @@
+#!/bin/bash
+
+function build_folder() {
+    cd ./build/
+    echo "to build folder"
+}
+
+function cmakes() {
+    cd build
+    cmake ..
+    echo "to cmake"
+}
+
+function build() {
+    cd ./build/
+    cmake --build .
+    echo "to build"
+}
+
+function install() {
+    cd ./build/
+    cmake --install .
+    echo "to install"
+}
+
+case "$1" in
+    folder)
+        build_folder
+        ;;
+    cmake)
+        cmakes
+        ;;
+    build)
+        build
+        ;;
+    install)
+        install
+        ;;
+esac
