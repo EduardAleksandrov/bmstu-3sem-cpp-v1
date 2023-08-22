@@ -26,6 +26,13 @@ function install() {
     echo "to install"
 }
 
+function all() {
+    cd build
+    cmake ..
+    cmake --build .
+    cmake --install .
+}
+
 case "$1" in
     folder)
         build_folder
@@ -38,5 +45,8 @@ case "$1" in
         ;;
     install)
         install
+        ;;
+    all)
+        all
         ;;
 esac
