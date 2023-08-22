@@ -1,5 +1,9 @@
 cmake_minimum_required(VERSION 3.16)
 
+# source interface
+# build interface
+# install interface
+
 project(one-project)
 
 message("dir: ${PROJECT_SOURCE_DIR}")
