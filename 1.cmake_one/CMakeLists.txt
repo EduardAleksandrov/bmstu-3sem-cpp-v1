@@ -12,7 +12,12 @@ set(CMAKE_INSTALL_PREFIX ${PROJECT_SOURCE_DIR}/install CACHE PATH "install prefi
 
 set(CMAKE_CXX_STANDARD 17)
 
-set(CMAKE_CXX_FLAGS "-g -Wall") #compiler flags - gdb, warnings  
+if(NOT CMAKE_BUILD_TYPE)
+    set(CMAKE_BUILD_TYPE Debug)
+endif()
+set(CMAKE_CXX_FLAGS "-Wall") #compiler flags - warnings
+set(CMAKE_CXX_FLAGS_DEBUG "-g") # gdb 
+set(CMAKE_CXX_FLAGS_RELEASE "-O3")
 
 add_executable(                          # Создаём цель (исполняемый файл)
     ${PROJECT_NAME}                        # Имя файла
