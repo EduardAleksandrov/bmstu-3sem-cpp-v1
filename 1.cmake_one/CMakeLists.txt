@@ -17,6 +17,11 @@ add_executable(                          # Создаём цель (исполн
     main.cpp                               # Список файлов исходного кода
 )
 
+find_library(MATH_LIBRARY m)
+if(MATH_LIBRARY)
+    target_link_libraries(${PROJECT_NAME} PUBLIC ${MATH_LIBRARY})
+endif()
+
 install(                                 # Указываем цель и путь установки
     TARGETS ${PROJECT_NAME}                # Путь прибавляется к префиксу
     RUNTIME DESTINATION bin                # bin - binary (путь к исполняемым файлам)

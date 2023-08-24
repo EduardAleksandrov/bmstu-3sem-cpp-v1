@@ -1,5 +1,6 @@
 #include <iostream>
 #include <set>
+#include <math.h>
 
 int main()
 {
@@ -15,5 +16,8 @@ int main()
 
     bool c {a==b}; // можем присваивать логические выражения
     std::cout << c << std::endl;
+
+    float sq = sqrt(5);
+    std::cout << sq << std::endl;
     return 0;
 }
