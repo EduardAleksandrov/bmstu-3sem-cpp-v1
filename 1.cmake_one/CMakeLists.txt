@@ -12,6 +12,8 @@ set(CMAKE_INSTALL_PREFIX ${PROJECT_SOURCE_DIR}/install CACHE PATH "install prefi
 
 set(CMAKE_CXX_STANDARD 17)
 
+set(CMAKE_CXX_FLAGS "-g -Wall") #compiler flags - gdb, warnings  
+
 add_executable(                          # Создаём цель (исполняемый файл)
     ${PROJECT_NAME}                        # Имя файла
     main.cpp                               # Список файлов исходного кода
