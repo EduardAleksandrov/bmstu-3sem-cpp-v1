@@ -27,3 +27,7 @@ run3.three:
 
 run4.set:
 	g++ -std=c++17 ./4.set.cpp -o ./build/4.set -g && ./build/4.set
+
+run5.obj_pointers:
+	g++ -std=c++17 ./5.obj_pointers.cpp -o ./build/5.obj_pointers -g && ./build/5.obj_pointers
+	

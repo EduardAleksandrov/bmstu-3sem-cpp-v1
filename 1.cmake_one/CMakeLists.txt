@@ -21,7 +21,7 @@ if(NOT CMAKE_BUILD_TYPE)
 endif()
 set(CMAKE_CXX_FLAGS "-Wall") #compiler flags - warnings
 set(CMAKE_CXX_FLAGS_DEBUG "-g") # gdb 
-set(CMAKE_CXX_FLAGS_RELEASE "-O3")
+set(CMAKE_CXX_FLAGS_RELEASE "-O3") #-02
 
 #adds executable file
 add_executable(                          # Создаём цель (исполняемый файл)
