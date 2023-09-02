@@ -1,0 +1,9 @@
+{
+    "version": 4,
+    "vendor": {
+        "conan": {}
+    },
+    "include": [
+        "/home/eduard/Projects/iu7/CPP_v1/2.cmake-conan/build-conan/CMakePresets.json"
+    ]
+}

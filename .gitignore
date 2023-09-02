@@ -4,6 +4,9 @@ build
 install
 *.o
 
+# conan
+build-conan
+
 # Editor directories and files
 .idea
 .vscode
