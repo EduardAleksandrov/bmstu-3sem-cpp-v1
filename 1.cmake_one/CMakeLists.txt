@@ -42,4 +42,6 @@ install(                                 # Указываем цель и пут
 ) 
 
 message("CIP = ${CMAKE_INSTALL_PREFIX} (should be /foo/bar/bubba")
+message("CBD = ${CMAKE_BINARY_DIR}")
+
 
