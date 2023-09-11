@@ -141,23 +141,35 @@ void searchMaxElem(int **a, int n, int m)
 
 void evenNumbers(int **a, int n, int m)
 {
+    // вектор, просто массив, динамический массив
     // std::vector <int> s;
     int s[40];
     int k = 0;
+    int *tmp {new int[0]};
     for(int i = 0; i<n; i++)
         for(int j = 0; j<m; j++)
             if(a[i][j] % 2 == 0 && a[i][j]>0)
             {
                 // s.push_back(a[i][j]);
                 s[k++] = a[i][j];
+
+                // используем выделение памяти под новый массив 
+                tmp[k-1] = a[i][j];
+                int* new_tmp = new int[k];
+                for(int l = 0; l < k; l++)
+                    new_tmp[l] = tmp[l];
+                delete[] tmp;
+                tmp = new_tmp;
             }
     // for(int i: s)
     //     std::cout << i << " ";
     for(int i = 0; i<k; i++)
-    {
         std::cout << s[i] << " ";
-    }
+    for(int i = 0; i<k; i++)
+        std::cout << tmp[i] << " ";
     std::cout << std::endl;
+
+    delete[] tmp;
 }
 
 void linesExchange(int **a, int n, int m)
