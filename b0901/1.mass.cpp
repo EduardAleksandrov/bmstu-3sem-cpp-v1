@@ -141,16 +141,22 @@ void searchMaxElem(int **a, int n, int m)
 
 void evenNumbers(int **a, int n, int m)
 {
+    // std::vector <int> s;
+    int s[40];
     int k = 0;
-    std::vector <int> s;
     for(int i = 0; i<n; i++)
         for(int j = 0; j<m; j++)
             if(a[i][j] % 2 == 0 && a[i][j]>0)
             {
-                s.push_back(a[i][j]);
+                // s.push_back(a[i][j]);
+                s[k++] = a[i][j];
             }
-    for(int i: s)
-        std::cout << i << " ";
+    // for(int i: s)
+    //     std::cout << i << " ";
+    for(int i = 0; i<k; i++)
+    {
+        std::cout << s[i] << " ";
+    }
     std::cout << std::endl;
 }
 
