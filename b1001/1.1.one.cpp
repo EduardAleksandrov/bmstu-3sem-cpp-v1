@@ -111,11 +111,10 @@ void possitiveElements(int **a, int n, int m, int **result, int *z)
             }
         }
     }
-    int *resultt;
 
     if(k > 0)
     {
-        resultt = new int[k];
+        *result = new int[k];
         k = 0;
 
         for(int i = 0; i < n; i++)
@@ -124,15 +123,13 @@ void possitiveElements(int **a, int n, int m, int **result, int *z)
             {
                 if(a[i][j] > 0)
                 {
-                    *(resultt+k) = a[i][j];
+                    *(*result+k) = a[i][j];
                     k++;
-                    
                 }
             }
         }
     }
     *z = k;
-    *result = resultt;
 }
 
 void sort_po(int *b, int n)
