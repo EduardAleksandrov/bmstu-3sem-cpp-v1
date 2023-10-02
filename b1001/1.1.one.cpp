@@ -1,7 +1,7 @@
-// Вернули из функции массив только положительных элементов + сортировка  -- через ссылку
+// Вернули из функции массив только положительных элементов + сортировка  -- через указатель
 #include <iostream>
 
-void possitiveElements(int**, int, int, int*&, int*);
+void possitiveElements(int**, int, int, int**, int*);
 void sort_po(int*, int);
 void obmen(int *, int *);
 
@@ -33,7 +33,7 @@ int main(void)
 // поиск положительных
     int *result;
     int z;
-    possitiveElements(a, n, m, result, &z);
+    possitiveElements(a, n, m, &result, &z);
 
     for(int i = 0; i < z; i++)
     {
@@ -96,7 +96,7 @@ int main(void)
 //     *z = k;
 // }
 
-void possitiveElements(int **a, int n, int m, int *&result, int *z)
+void possitiveElements(int **a, int n, int m, int **result, int *z)
 {
     
     int k = 0;
@@ -111,22 +111,28 @@ void possitiveElements(int **a, int n, int m, int *&result, int *z)
             }
         }
     }
+    int *resultt;
+
     if(k > 0)
     {
-        result = new int[k];
+        resultt = new int[k];
         k = 0;
+
         for(int i = 0; i < n; i++)
         {
             for(int j = 0; j < m; j++)
             {
                 if(a[i][j] > 0)
                 {
-                    result[k++] = a[i][j];
+                    *(resultt+k) = a[i][j];
+                    k++;
+                    
                 }
             }
         }
     }
     *z = k;
+    *result = resultt;
 }
 
 void sort_po(int *b, int n)
