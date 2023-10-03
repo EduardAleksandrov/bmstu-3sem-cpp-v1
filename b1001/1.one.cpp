@@ -56,7 +56,7 @@ int main(void)
         delete[] a[i];
     delete [] a;
 
-    delete result;
+    delete [] result;
     result = nullptr;
 
 
