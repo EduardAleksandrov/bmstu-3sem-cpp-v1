@@ -30,4 +30,7 @@ run4.set:
 
 run5.obj_pointers:
 	g++ -std=c++17 ./5.obj_pointers.cpp -o ./build/5.obj_pointers -g && ./build/5.obj_pointers
+
+run6.wchar:
+	g++ -std=c++17 ./6.wchar.cpp -o ./build/6.wchar -g && ./build/6.wchar
 	
