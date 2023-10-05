@@ -33,4 +33,9 @@ run5.obj_pointers:
 
 run6.wchar:
 	g++ -std=c++17 ./6.wchar.cpp -o ./build/6.wchar -g && ./build/6.wchar
-	
+
+run7.str:
+	g++ -std=c++17 ./7.str.cpp -o ./build/7.str -g && ./build/7.str
+
+run8.rvalue:
+	g++ -std=c++17 ./8.rvalue.cpp -o ./build/8.rvalue -g && ./build/8.rvalue
