@@ -37,5 +37,5 @@ run6.wchar:
 run7.str:
 	g++ -std=c++17 ./7.str.cpp -o ./build/7.str -g && ./build/7.str
 
-run8.rvalue:
-	g++ -std=c++17 ./8.rvalue.cpp -o ./build/8.rvalue -g && ./build/8.rvalue
+run8.cin:
+	g++ -std=c++17 ./8.cin.cpp -o ./build/8.cin -g && ./build/8.cin
