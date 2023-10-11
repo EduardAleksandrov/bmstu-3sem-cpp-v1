@@ -31,7 +31,13 @@ public:
         x = t.x;
         y = t.y;
     }
+    void print(); // прототип функции
 };
+
+void Point0::print() // реализация функции
+{
+    std::cout << "Hello from print function" << std::endl;
+}
 
 int main(void)
 {
@@ -45,6 +51,7 @@ int main(void)
     // Point0 dot2{5, 6};
     // std::cout << dot2.x << " " << dot2.y << " " << dot2.rast0() << std::endl;
 
+    dot.print();
 
 
 // для матрицы расстояний

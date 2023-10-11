@@ -39,3 +39,8 @@ run7.str:
 
 run8.cin:
 	g++ -std=c++17 ./8.cin.cpp -o ./build/8.cin -g && ./build/8.cin
+
+run_9.class_stack:
+	g++ -std=c++17 ./9.class_stack.cpp -o ./build/9.class_stack -g && ./build/9.class_stack
+run_9.1.class_stack:
+	g++ -std=c++17 ./9.1.class_stack.cpp ./9.1.stack_funcs.cpp -o ./build/9.1.class_stack -g && ./build/9.1.class_stack
