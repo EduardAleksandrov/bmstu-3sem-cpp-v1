@@ -44,3 +44,15 @@ run_9.class_stack:
 	g++ -std=c++17 ./9.class_stack.cpp -o ./build/9.class_stack -g && ./build/9.class_stack
 run_9.1.class_stack:
 	g++ -std=c++17 ./9.1.class_stack.cpp ./9.1.stack_funcs.cpp -o ./build/9.1.class_stack -g && ./build/9.1.class_stack
+
+
+
+run_10.move:
+	g++ -std=c++17 ./10.move.cpp -o ./build/10.move -g && ./build/10.move
+
+
+
+
+
+
+

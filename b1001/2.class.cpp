@@ -31,6 +31,11 @@ public:
         x = t.x;
         y = t.y;
     }
+    Point0(Point0&& t)
+    {
+        x = t.x;
+        y = t.y;
+    }
     void print(); // прототип функции
 };
 
@@ -83,6 +88,11 @@ int main(void)
         delete [] a[i];
     delete [] a;
     delete [] z;
+
+// rvalue
+    Point0 rv = Point0(Point0(11, 12));
+    std::cout << rv.x << " " << rv.y << std::endl;
+
 
     return 0;
 }
