@@ -1,4 +1,7 @@
 // Вернули из функции массив только положительных элементов + сортировка  -- через ссылку
+/*
+    Лекция 4
+*/
 #include <iostream>
 
 void possitiveElements(int**, int, int, int*&, int*);

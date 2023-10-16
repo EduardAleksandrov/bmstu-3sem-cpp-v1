@@ -7,6 +7,9 @@ run1.1.one:
 	
 run2.class:
 	g++ -std=c++17 ./2.class.cpp -o ./build/2.class -g && ./build/2.class
+
+run3.okr:
+	g++ -std=c++17 ./3.okr.cpp -o ./build/3.okr -g && ./build/3.okr
 	
 
 

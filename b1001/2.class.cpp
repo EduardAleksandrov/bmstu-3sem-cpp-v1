@@ -1,3 +1,6 @@
+/*
+    Лекция 5
+*/
 #include <iostream>
 #include <cmath>
 
