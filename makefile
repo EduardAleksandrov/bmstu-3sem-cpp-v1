@@ -49,6 +49,8 @@ run_9.1.class_stack:
 
 run_10.move:
 	g++ -std=c++17 ./10.move.cpp -o ./build/10.move -g && ./build/10.move
+run_11.class_prototype:
+	g++ -std=c++17 ./11.class_prototype.cpp -o ./build/11.class_prototype -g && ./build/11.class_prototype
 
 
 
