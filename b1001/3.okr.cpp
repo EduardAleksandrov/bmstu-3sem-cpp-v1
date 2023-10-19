@@ -206,6 +206,8 @@ int main(void)
 
 // ---
 
+    double(*p[])(double) = {f1, f2};
+    std::cout << p[0](0.5) << std::endl;
 
     return 0;
 }
