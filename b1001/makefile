@@ -10,6 +10,9 @@ run2.class:
 
 run3.okr:
 	g++ -std=c++17 ./3.okr.cpp -o ./build/3.okr -g && ./build/3.okr
+
+run4.nasled:
+	g++ -std=c++17 ./4.nasled.cpp -o ./build/4.nasled -g && ./build/4.nasled
 	
 
 
