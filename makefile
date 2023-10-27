@@ -52,6 +52,9 @@ run_10.move:
 run_11.class_prototype:
 	g++ -std=c++17 ./11.class_prototype.cpp -o ./build/11.class_prototype -g && ./build/11.class_prototype
 
+run_12.virtual:
+	g++ -std=c++17 ./12.virtual.cpp -o ./build/12.virtual -g && ./build/12.virtual
+
 
 
 
