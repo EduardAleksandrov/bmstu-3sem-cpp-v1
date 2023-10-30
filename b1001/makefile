@@ -14,7 +14,11 @@ run3.okr:
 run4.nasled:
 	g++ -std=c++17 ./4.nasled.cpp -o ./build/4.nasled -g && ./build/4.nasled
 	
-
+run5.virtual:
+	g++ -std=c++17 ./5.virtual.cpp -o ./build/5.virtual -g && ./build/5.virtual
+run6.virtual:
+	g++ -std=c++17 ./6.virtual2.cpp -o ./build/6.virtual2 -g && ./build/6.virtual2
+	
 
 
 	
