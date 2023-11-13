@@ -55,6 +55,9 @@ run_11.class_prototype:
 run_12.virtual:
 	g++ -std=c++17 ./12.virtual.cpp -o ./build/12.virtual -g && ./build/12.virtual
 
+run_13.cout:
+	g++ -std=c++17 ./13.cout.cpp -o ./build/13.cout -g && ./build/13.cout
+
 
 
 
