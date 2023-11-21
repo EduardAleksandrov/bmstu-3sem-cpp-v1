@@ -19,6 +19,14 @@ public:
     void get_matrix();
     Matrixt& operator*(const Matrixt<T>&r);
     Matrixt& operator=(const Matrixt<T>&r);
+    Matrixt& transponirov();
+    friend std::istream& operator>>(std::istream&in, const Matrixt <T>&r)
+    {
+        for(int i = 0; i<r.n; i++)
+            for(int j = 0; j<r.m; j++)
+                in>>r.a[i][j];
+        return in;
+    }
 };
 
 template<class T>
@@ -90,12 +98,23 @@ Matrixt<T>& Matrixt<T>::operator=(const Matrixt<T>& r)
 {
     if(&r!=this) 
     {
-        // Matrixt(r.n, r.m);
+        m = r.m;
+        n = r.n;
         for(int i =0 ; i<n;i++)
             for(int j = 0;j<m;j++)
                 a[i][j] = r.a[i][j];
     }
     return *this;
+}
+template <class T>
+Matrixt <T>& Matrixt<T>::transponirov()
+{
+    int i,j;
+    Matrixt *fp = new Matrixt(m,n);
+    for(i = 0; i<n; i++)
+        for(j=0;j<m;j++)
+            fp->a[j][i] = a[i][j];
+    return *fp;
 }
 int main()
 {
@@ -106,9 +125,21 @@ int main()
     a.get_matrix();
     b.set_matrix();
     b.get_matrix();
+
     Matrixt <double> ct;
     ct = a*b;
     ct.get_matrix();
+
+    Matrixt <double> pt;
+    pt = b.transponirov();
+    pt.get_matrix();
+    // Matrixt<double> p1;
+    // p1 = pt*ct;
+    // p1.get_matrix();
+    
+    Matrixt<double> ci(1,3);
+    std::cin >> ci;
+    ci.get_matrix();
 
 
 
