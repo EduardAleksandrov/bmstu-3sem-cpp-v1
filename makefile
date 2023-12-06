@@ -58,6 +58,10 @@ run_12.virtual:
 run_13.cout:
 	g++ -std=c++17 ./13.cout.cpp -o ./build/13.cout -g && ./build/13.cout
 
+run_14.events:
+	g++ -std=c++17 ./14.events.cpp -o ./build/14.events -g && ./build/14.events
+
+
 
 
 
