@@ -61,6 +61,9 @@ run_13.cout:
 run_14.events:
 	g++ -std=c++17 ./14.events.cpp -o ./build/14.events -g && ./build/14.events
 
+run_15.cast:
+	g++ -std=c++17 ./15.cast.cpp -o ./build/15.cast -g && ./build/15.cast
+
 
 
 
