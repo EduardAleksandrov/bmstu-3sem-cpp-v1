@@ -3,6 +3,7 @@
 #include <string>
 #include <vector>
 #include <fstream>
+#include <cassert>
 using namespace std;
 
 struct One
@@ -17,6 +18,7 @@ struct One
 void fun()
 {
     auto f = []()->int{int x = 5; return x;};
+    static_assert(sizeof(void*) == 8, "64 bit code is not supported");
 }
 
 int main()
@@ -67,6 +69,8 @@ int main()
 // ---
 
     cout << 1.0/3 << "\n";
+
+    fun();
     return 0;
 
 }
