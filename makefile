@@ -67,6 +67,9 @@ run_15.cast:
 run_16.throw:
 	g++ -std=c++17 ./16.throw.cpp -o ./build/16.throw -g && ./build/16.throw
 
+run_17.namespaces:
+	g++ -std=c++17 ./17.namespaces.cpp ./17.ns.cpp -o ./build/17.namespaces -g && ./build/17.namespaces
+
 
 
 
