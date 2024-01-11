@@ -1,5 +1,8 @@
+/*
+    Реализация
+*/
 #include <iostream>
-#include "17.ns.hpp"
+#include "17.ns_impl.hpp"
 
 void Parser::print1()
     {
