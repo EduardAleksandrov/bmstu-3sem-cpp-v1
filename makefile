@@ -71,6 +71,10 @@ run_17.namespaces:
 	g++ -std=c++17 ./17.namespaces.cpp ./17.ns.cpp -o ./build/17.namespaces -g && ./build/17.namespaces
 
 
+run_18.class_one:
+	g++ -std=c++17 ./18.class_one.cpp -o ./build/18.class_one -g && ./build/18.class_one
+
+
 
 
 
