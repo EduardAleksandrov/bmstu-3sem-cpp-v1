@@ -7,3 +7,9 @@ run_2.graf:
 
 run_3.file_in_out:
 	g++ -std=c++17 ./3.file_in_out.cpp -o ./build/3.file_in_out -g && ./build/3.file_in_out
+
+run_4.in_out:
+	g++ -std=c++17 ./4.in_out.cpp -o ./build/4.in_out -g && ./build/4.in_out
+
+
+
