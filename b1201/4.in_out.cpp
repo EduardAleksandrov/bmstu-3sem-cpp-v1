@@ -55,11 +55,39 @@ public:
     }
 };
 
+class Obj_p
+{
+    Point* p;
+    int n;
+public:
+    Obj_p(int nn): n{nn}
+    {
+        try
+        {
+            p = new Point[n];
+        }
+        catch (std::bad_alloc& ba)
+        {
+            std::cerr << ba.what() << std::endl;
+        }
+    }
+    ~Obj_p()
+    {
+        delete [] p;
+        p = nullptr;
+        cout<< "Деструктор obj_p\n";
+    }
+    Point& operator[](int index)
+    {
+        return p[index];
+    }
+};
+
 class File 
 {
 public:
     File(){}
-    void file_bin_sozd(string st, Point* t, int n)
+    void file_bin_sozd(string st, Obj_p& t, int n)
     {
         fstream f;
         int i;
@@ -127,9 +155,50 @@ public:
             f.seekg(-size, ios::cur);
             f.write((char*)&p, size);
         }
+    }
+    void file_bin_mod_del(string st, int pos)
+    {
+        fstream f, ff;
+        int len, m, size;
+        Point p;
+        f.open(st, ios::binary | ios::in | ios::out);
+        f.seekg(0, ios::end);
+        len = f.tellg();
+        size = sizeof(Point);
+        m = len/ size;
+        f.seekg((pos+1)*size, ios::beg);
+        for(int i = pos+1; i < m; i++)
+        {
+            f.seekp(size*i, ios::beg);
+            f.read((char*)&p, (int)sizeof(p));
+            f.seekg(-2*size, ios::cur);
+            f.write((char*)&p, size);
+            // cout<< "file del " << " "<< i << " " << m;
+        }
 
+        ff.open("temp.dat", ios::binary | ios::out);
+        f.seekg(0, ios::beg);
+        for(int i = 0 ; i<m-1; i++)
+        {
+            f.read((char*)&p, (int)sizeof(p));
+            ff.write((char*)&p, size);
+        }
+        
+        f.close();
+        ff.close();
+        const char* f_name = reinterpret_cast<const char*> (st.c_str());
+        remove(f_name);
+        rename("temp.dat", f_name);
+    }
+    Point return_object()
+    {
+        Point p;
+        p.set(2,2);
+        return p;
     }
 };
+
+
 
 int main()
 {
@@ -138,7 +207,8 @@ int main()
     double yc[] = {5,8,1,9,3,1};
     int n = 6;
 
-    Point* p = new Point[n];
+    // Point* p = new Point[n];
+    Obj_p p{n};
 
     for(int i = 0; i < n; i++)
     {
@@ -156,8 +226,15 @@ int main()
     f.file_bin_mod(file_name);
     f.wwod_f(file_name);
 
-    delete [] p;
+    f.file_bin_mod_del(file_name, 2);
+    f.wwod_f(file_name);
+
+    // delete [] p;
     delete [] pp;
+
+    Point ob_p = f.return_object(); //! Возможен возврат по значению из функции для локальных переменных
+    cout << endl;
+    cout << ob_p.get_x() << " " << ob_p.get_y()<< endl;
 
     return 0;
 }
