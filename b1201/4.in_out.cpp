@@ -83,21 +83,54 @@ public:
     }
 };
 
+class Get_file
+{
+    fstream f;
+public:
+    Get_file(string st, const ios_base::openmode pos) //! передача квалификатора в функцию
+    {
+        f.open(st, pos);
+        if(!f) 
+        {
+            cout << "Cannot open file!" << endl;
+            exit(EXIT_FAILURE);
+        }
+    }
+    ~Get_file()
+    {
+        cout<< "fstream closed" << endl;
+        f.close();
+    }
+    fstream& get_file_pointer()
+    {
+        return f;
+    }
+};
+
 class File 
 {
 public:
     File(){}
     void file_bin_sozd(string st, Obj_p& t, int n)
     {
-        fstream f;
-        int i;
-        f.open(st, ios::binary | ios::out);
+        // fstream f;
+        Get_file f = Get_file(st, ios::binary|ios::out);
+        fstream& ff = f.get_file_pointer();
+        // throw "mistake"; //! можно запустить ошибку, но файловый дескриптор будет в любом случае закрыт
+
+
+        // f.open(st, ios::binary | ios::out);
+        // if(!f) 
+        // {
+        //     cout << "Cannot open file!" << endl;
+        //     exit(EXIT_FAILURE);
+        // }
         // int size = sizeof(Point);
         for(int i =0; i < n; i++)
         {
-            f.write((char*)& t[i], (int)sizeof(Point)); // столько то байтов (sizeof) записать побайтово (char*) и взять их из t[i]
+            ff.write((char*)& t[i], (int)sizeof(Point)); // столько то байтов (sizeof) записать побайтово (char*) и взять их из t[i]
         }
-        f.close();
+        // f.close();
     }
     void wwod_f(string st)
     {
