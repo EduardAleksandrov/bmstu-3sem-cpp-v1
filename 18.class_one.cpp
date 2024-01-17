@@ -10,12 +10,15 @@ class Date
     int x;
 
     public:
+    int zz;
     static Date default_date; //!композиция
     Date(int dd = 0, int mm = 0, int yy = 0, int xx = 55);
+    Date();
     void init(int, int, int, int);
     void print();
 };
-Date::Date(int dd, int mm, int yy, int xx): d{dd}, m{mm}, y{yy}, x{xx} {}
+Date::Date(int dd, int mm, int yy, int xx): d{dd}, m{mm}, y{yy}, x{xx} {cout<<"Конструктор";}
+Date::Date(){cout<<"Конструктор базовый";}
 void Date::init(int dd, int mm, int yy, int xx)
 {
     d = dd;
@@ -30,10 +33,15 @@ void Date::print()
 
 Date Date::default_date {1,2,2004,12}; //статический член обязательно определить
 
+class Time: public Date
+{
+public:
+    Time():Date(1,2,3,4){}
+};
 
 int main()
 {
-    Date dt;
+    Date dt {1,2,3,6};
     dt.print();
     dt.init(5, 12, 2023, 8);
     dt.print();
@@ -42,6 +50,8 @@ int main()
 
     // int xx = dt.x;       // protected используется при наследовании, для объектов класса он также закрыт
 
+    Time t;
+    t.zz = 5;
 
 
     return 0;
