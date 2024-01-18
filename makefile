@@ -74,6 +74,9 @@ run_17.namespaces:
 run_18.class_one:
 	g++ -std=c++17 ./18.class_one.cpp -o ./build/18.class_one -g && ./build/18.class_one
 
+run_19.destructor:
+	g++ -std=c++17 ./19.destructor.cpp -o ./build/19.destructor -g && ./build/19.destructor
+
 
 
 

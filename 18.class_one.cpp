@@ -53,6 +53,9 @@ int main()
     Time t;
     t.zz = 5;
 
+    int m = 5;
+    int* mm = std::move(&m);
+    cout << endl<< &m << " "<< mm<< "\n";
 
     return 0;
 }
