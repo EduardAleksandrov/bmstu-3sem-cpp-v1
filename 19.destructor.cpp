@@ -36,6 +36,7 @@ public:
         Shape::print();
         cout << "Circle print" << endl;
     }
+    friend void sum();
     ~Circle()
     {
         cout << "circle destructor" << endl;
@@ -43,6 +44,10 @@ public:
     }
 };
 
+    void sum()
+    {
+        cout<< "sum" << endl;
+    }
 class Rect: public Shape
 {
     int xt;
@@ -84,5 +89,9 @@ int main()
     for(int i = 0; i < 2; i++)
         delete vect[i];
         
+
+    Circle crr = Circle(8);
+    // crr.sum() //не вызывается от лица объекта класса, т.к. friend
+    sum();
     return 0;
 }
