@@ -77,6 +77,9 @@ run_18.class_one:
 run_19.destructor:
 	g++ -std=c++17 ./19.destructor.cpp -o ./build/19.destructor -g && ./build/19.destructor
 
+# 2a - standart 2020 year
+run_20.operator:
+	g++ -std=c++2a ./20.operator.cpp -o ./build/20.operator -g && ./build/20.operator  
 
 
 
