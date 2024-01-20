@@ -8,7 +8,7 @@ public:
     void print();
     One operator+(const One&);
     One& operator=(const One&) = default;
-    ~One(){}
+    ~One(){cout << "деструктор" << endl;}
     
 private:
     int x;
@@ -29,6 +29,11 @@ One One::operator+(const One& t)
 int operator"" _minute(unsigned long long n) //пользовательский литерал
 {
     return 60*n;
+}
+
+void fun(One&& x)
+{
+    x.print();
 }
 
 int main()
@@ -56,6 +61,7 @@ int main()
     else std::cout << "pre-standard C++." << __cplusplus;
     std::cout << "\n";
 
+    fun(One(3,4));
 
     return 0;
 }
