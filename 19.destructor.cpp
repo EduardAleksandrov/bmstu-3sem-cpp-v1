@@ -31,19 +31,32 @@ public:
     {
         cout << "Circle constructor" << endl;
     }
-    void print()
+    void print() override //!не пишем virtual, оно подразумевается автоматически
     {
         Shape::print();
         cout << "Circle print" << endl;
     }
     friend void sum();
-    ~Circle()
+    virtual ~Circle()
     {
         cout << "circle destructor" << endl;
 
     }
 };
 
+class Oval: public Circle
+{
+public:
+    Oval(int xx): Circle(xx){}
+    void print() override
+    {
+        cout << "Oval print" << endl;
+    }
+    ~Oval()
+    {
+        cout << "oval desstructor" << endl;
+    }
+};
     void sum()
     {
         cout<< "sum" << endl;
@@ -56,7 +69,7 @@ public:
     {
         cout << "Rect constructor" << endl;
     }
-    void print()
+    void print() override
     {
         cout << "Rect print" << endl;
     }
@@ -66,6 +79,12 @@ public:
 
     }
 };
+
+auto fun()->int
+{
+    int a {5};
+    return a;
+}
 
 int main()
 {
@@ -93,5 +112,11 @@ int main()
     Circle crr = Circle(8);
     // crr.sum() //не вызывается от лица объекта класса, т.к. friend
     sum();
+
+
+    Oval ov(10);
+    Circle* cr = &ov;
+    cr->print();
+
     return 0;
 }

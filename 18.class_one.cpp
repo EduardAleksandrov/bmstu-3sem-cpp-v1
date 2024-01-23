@@ -57,5 +57,8 @@ int main()
     int* mm = std::move(&m);
     cout << endl<< &m << " "<< mm<< "\n";
 
+    Date* dtr = &t;
+    cout << dtr->zz <<endl;
+
     return 0;
 }

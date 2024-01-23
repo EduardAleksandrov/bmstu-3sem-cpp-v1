@@ -3,7 +3,7 @@
 # conan install /home/eduard/Projects/iu7/CPP_v1/2.cmake-conan/conanfile-example.txt -of /home/eduard/Projects/iu7/CPP_v1/2.cmake-conan/build-conan --build=missing
 # cd build
 # source conanbuild.sh  - необязательный элемент
-# cmake .. -DCMAKE_TOOLCHAIN_FILE=conan_toolchain.cmake -DCMAKE_BUILD_TYPE=Release
+# cmake .. -DCMAKE_TOOLCHAIN_FILE=conan_toolchain.cmake -DCMAKE_BUILD_TYPE=Release        - .. значит что файл cmakelists.txt лежит на директорию выше
 # cmake --build .
 # source deactivate_conanbuild.sh
 # ./timer
