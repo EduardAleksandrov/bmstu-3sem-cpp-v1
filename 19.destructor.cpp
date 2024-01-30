@@ -27,6 +27,7 @@ public:
 class Circle: public Shape
 {
 public:
+    Circle() = default;
     Circle(int xx):Shape(xx)
     {
         cout << "Circle constructor" << endl;
@@ -94,7 +95,7 @@ int main()
     // sh->print();
     // sh->Shape::print();
 
-    std::vector <Shape*> vect {new Circle(5), new Rect(6)};
+    std::vector <Shape*> vect {new Circle(5), new Rect(6)}; //! это rvalue, но на него есть ссылка, поэтому он остается в памяти
 
     vect[0]->print();
     vect[1]->print();
@@ -104,7 +105,7 @@ int main()
     cout << endl << ti1.name() << endl;
     vk1->print();
 
-    //! нужен virtual destructor для удаления объектов Circle и Rect
+    // //! нужен virtual destructor для удаления объектов Circle и Rect
     for(int i = 0; i < 2; i++)
         delete vect[i];
         
@@ -117,6 +118,9 @@ int main()
     Oval ov(10);
     Circle* cr = &ov;
     cr->print();
+// создание rvalue, присвоение, удаление
+    Circle crt;
+    crt = Circle(5);
 
     return 0;
 }
