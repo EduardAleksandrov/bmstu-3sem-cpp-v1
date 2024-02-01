@@ -81,6 +81,9 @@ run_19.destructor:
 run_20.operator:
 	g++ -std=c++2a ./20.operator.cpp -o ./build/20.operator -g && ./build/20.operator  
 
+run_21.templates_v1:
+	g++ -std=c++17 ./21.templates_v1.cpp -o ./build/21.templates_v1 -g && ./build/21.templates_v1
+
 
 
 
