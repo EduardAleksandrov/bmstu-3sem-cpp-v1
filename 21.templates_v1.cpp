@@ -8,6 +8,10 @@ constexpr bool fun() //вычисляет в момент компиляции
 {
     return (1==12 && 2!=3);
 }
+void zero(int&& n)
+{
+    cout << n << endl;
+}
 
 int main()
 {
@@ -19,6 +23,8 @@ int main()
 
     int v = 5;
     assert(("wrong number", v==5));
+
+    zero(int{9}); //rvalue может быть передан по значению или по rvalue ссылке
 
     return 0;
 }

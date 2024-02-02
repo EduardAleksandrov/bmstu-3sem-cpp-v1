@@ -20,6 +20,12 @@ void fun(int&& value)
     return;
 
 }
+
+void zero(int&& n)
+{
+    cout << n << endl;
+}
+
 int main()
 {   
     int x = 5;
@@ -36,6 +42,8 @@ int main()
     x=6;
     z=7;
     cout << z << " " << x <<" "<< &z << " "<< &x <<endl;
+
+    zero(int{9}); //rvalue
     
     return 0;
 }
