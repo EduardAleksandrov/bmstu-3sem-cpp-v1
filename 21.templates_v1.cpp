@@ -1,10 +1,13 @@
 // Вычисления на этапе компиляции
+// Замыкания
 #include <iostream>
 #include <cassert>
+#include <functional>
 
 using std::cout, std::endl;
 
-constexpr bool fun() //вычисляет в момент компиляции
+//!вычисляет в момент компиляции
+constexpr bool fun() 
 {
     return (1==12 && 2!=3);
 }
@@ -12,6 +15,18 @@ void zero(int&& n)
 {
     cout << n << endl;
 }
+// ---
+
+//!замыкание
+typedef int(*cl)();
+using cll = std::function<int()>;
+cll closure()
+{
+    int z = 5;
+    auto f = [=]()mutable->int{int x = 5; return x+(z++);};
+    return f;
+}
+// ---
 
 int main()
 {
@@ -25,6 +40,11 @@ int main()
     assert(("wrong number", v==5));
 
     zero(int{9}); //rvalue может быть передан по значению или по rvalue ссылке
+    
+    
+    
+    cll t = closure();
+    cout << t() << " " << t() << endl;
 
     return 0;
 }
