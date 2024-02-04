@@ -13,7 +13,7 @@ services:
     restart: unless-stopped
     container_name: mysql-server
     ports:
-      - 33060:3306
+      - 3306:3306
     volumes:
       - mysql-vl:/var/lib/mysql
     environment:
