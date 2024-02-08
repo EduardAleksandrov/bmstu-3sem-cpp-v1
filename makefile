@@ -87,6 +87,9 @@ run_21.templates_v1:
 run_22.sqlite:
 	g++ -std=c++17 ./22.sqlite.cpp -lsqlite3 -o ./build/22.sqlite -g && ./build/22.sqlite
 
+run_23.templates_v2:
+	g++ -std=c++17 ./23.templates_v2.cpp -o ./build/23.templates_v2 -g && ./build/23.templates_v2
+
 
 
 
