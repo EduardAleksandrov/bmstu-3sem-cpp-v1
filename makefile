@@ -91,7 +91,12 @@ run_23.templates_v2:
 	g++ -std=c++17 ./23.templates_v2.cpp -o ./build/23.templates_v2 -g && ./build/23.templates_v2
 
 
-
+# препроцессор
+run_24.ret.prep:
+	g++ -E ./24.ret.cpp -o build/24.ret.i
+# компилятор - в ассемблер
+run_24.ret.asm:
+	g++ -std=c++17 -S ./build/24.ret.i -o ./build/24.ret.s
 
 
 
